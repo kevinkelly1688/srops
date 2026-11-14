@@ -1,0 +1,25 @@
+[Unit]
+Description=StarRocks 运维平台 (sr-ops)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=srops
+Group=srops
+WorkingDirectory=/opt/sr-ops
+ExecStart=/opt/sr-ops/sr-ops -listen 0.0.0.0:8766 -data /opt/sr-ops/data -web /opt/sr-ops/web
+Restart=on-failure
+RestartSec=5
+# 定时巡检通知发往 Lark / Slack 等境外地址需要代理时取消注释
+# Environment=HTTPS_PROXY=http://proxy.example.com:3128
+# Environment=NO_PROXY=10.0.0.0/8,.example.com
+# 平台只需要读写自己的数据目录
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/sr-ops/data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

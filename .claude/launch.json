@@ -1,0 +1,57 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "starrocks-ops",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8766",
+        "--bind",
+        "127.0.0.1"
+      ],
+      "port": 8766
+    },
+    {
+      "name": "sr-ops-live",
+      "runtimeExecutable": "backend/bin/sr-ops.exe",
+      "runtimeArgs": [
+        "-listen",
+        "127.0.0.1:8767",
+        "-data",
+        "backend/data",
+        "-web",
+        "."
+      ],
+      "port": 8767
+    },
+    {
+      "name": "fakesr",
+      "runtimeExecutable": "backend/bin/fakesr.exe",
+      "runtimeArgs": [
+        "-scenario",
+        "problems",
+        "-s3-port",
+        "19190"
+      ],
+      "port": 19030
+    },
+    {
+      "name": "fakesr-hosts",
+      "runtimeExecutable": "backend/bin/fakesr.exe",
+      "runtimeArgs": [
+        "-hosts",
+        "-ssh-port",
+        "12333",
+        "-query-port",
+        "19130",
+        "-spare",
+        "3",
+        "-scenario",
+        "healthy"
+      ],
+      "port": 19130
+    }
+  ]
+}

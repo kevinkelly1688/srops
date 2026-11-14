@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StarRocks 运维平台</title>
+<link rel="stylesheet" href="css/style.css?v=1.7.5">
+</head>
+<body>
+<div class="login" id="login" hidden></div>
+<div class="app" id="app">
+  <aside class="side">
+    <div class="logo"><i>★</i><div>StarRocks Ops<small>部署 · 巡检 · 运维</small></div></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="ver" id="ver" hidden></div>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <div><div class="crumb" id="crumb"></div><h1 id="pageTitle"></h1></div>
+      <select id="clusterSel" aria-label="选择集群"></select>
+      <span class="pill mock">产品演示</span>
+      <span class="sp"></span>
+      <button class="btn" id="helpBtn" title="查看本页使用手册">? 帮助</button>
+      <div class="theme-sw" data-theme-sw="1"></div>
+      <div class="umenu-wrap"><div class="user-chip" title="原型演示：切换登录身份以查看不同角色的菜单与按钮权限"><span class="avatar" id="avatar" data-on="umenu" style="cursor:pointer" title="个人菜单"></span><select id="userSel" aria-label="切换用户"></select></div>
+        <div class="umenu" id="umenu"></div></div>
+    </header>
+    <main class="content" id="view"></main>
+    <footer class="icp" id="icp" hidden></footer>
+  </div>
+</div>
+<aside class="drawer" id="drawer"><header><h3 id="drTitle"></h3><button class="btn sm" data-close="1">关闭 ✕</button></header><div class="dbody" id="drBody"></div></aside>
+<div class="mask" id="mask"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/data.js?v=1.7.5"></script>
+<script src="js/core.js?v=1.7.5"></script>
+<script src="js/perm.js?v=1.7.5"></script>
+<script src="js/p_overview.js?v=1.7.5"></script>
+<script src="js/p_inspect.js?v=1.7.5"></script>
+<script src="js/p_query.js?v=1.7.5"></script>
+<script src="js/p_nodes.js?v=1.7.5"></script>
+<script src="js/p_deploy.js?v=1.7.5"></script>
+<script src="js/p_data.js?v=1.7.5"></script>
+<script src="js/p_alert.js?v=1.7.5"></script>
+<script src="js/p_system.js?v=1.7.5"></script>
+<script src="js/cluster_import.js?v=1.7.5"></script>
+<script src="js/p_help.js?v=1.7.5"></script>
+<script src="js/help_content.js?v=1.7.5"></script>
+<script src="js/login.js?v=1.7.5"></script>
+<script src="js/watermark.js?v=1.7.5"></script>
+<script src="js/live.js?v=1.7.5"></script>
+<script src="js/live_ops.js?v=1.7.5"></script>
+<script src="js/live_query.js?v=1.7.5"></script>
+<script src="js/live_backup.js?v=1.7.5"></script>
+<script src="js/live_node.js?v=1.7.5"></script>
+<script src="js/live_deploy.js?v=1.7.5"></script>
+<script src="js/live_upgrade.js?v=1.7.5"></script>
+<script src="js/live_alert.js?v=1.7.5"></script>
+<script src="js/boot.js?v=1.7.5"></script>
+</body>
+</html>
